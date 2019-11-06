@@ -1,0 +1,17 @@
+header#mainHeader {
+  height: 375px;
+  width: 100%;
+  top: 70px;
+  position: relative;
+  text-align: center;
+  background-color: #49a1eb;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+}
+
+.avatar {
+  margin-top: 20px;
+}
+
+.name {
+  margin-top: 0;
+}

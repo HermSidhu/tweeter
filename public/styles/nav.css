@@ -1,0 +1,23 @@
+nav {
+  font-family: 'Bungee', cursive;
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  z-index: 1000;
+  padding: 1em;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+.navbar {
+  font-family: 'Bungee', cursive;
+  vertical-align: center;
+}
+
+.newtweet {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  float: right;
+}
+

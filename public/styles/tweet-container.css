@@ -1,0 +1,44 @@
+#tweetContainer {
+  font-size: 16px;
+}
+
+article.tweet {
+  border: 1px solid black;
+
+}
+
+article.tweet:hover {
+  box-shadow: 5px 10px rgb(92, 37, 37);
+  font-weight: bold;
+}
+
+article.tweet #username {
+  visibility: hidden;
+}
+
+article.tweet:hover #username {
+  visibility: visible;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+article.tweet header img  {
+  height: 50px;
+}
+
+article.tweet header .profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+article.tweet footer {
+  height: 20px;
+  border-top: 1px solid black;
+  margin: 10px;
+}
