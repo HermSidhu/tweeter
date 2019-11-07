@@ -1,6 +1,7 @@
 .new-tweet {
-  text-align: center;
-  margin: 0 auto 40px;
+  text-align: left;
+  padding: 10px;
+  margin: 0 20px 40px;
   position: relative;
   width: 90%;
 }
@@ -13,7 +14,7 @@
 .tweet-header {
   text-align: left;
   position: relative;
-  border-style: non non solid none;
+  border-style: non solid none;
 }
 
 .tweet-box {
