@@ -13,23 +13,29 @@ const renderTweets = function (tweets) {
   }
 }
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const createTweetElement = function (tweet) {
   let $tweet = ` <article class="tweet">
                 <header>
                   
                     <img src=${tweet.user.avatars}>
-                    <span class="tweeterName">${tweet.user.name}</span>
-                    <span class="username">${tweet.user.handle}</span>
+                    <span class="tweeterName">${escape(tweet.user.name)}</span>
+                    <span class="username">${escape(tweet.user.handle)}</span>
                   
                 </header>
 
                 <div class="sampleTweetText">
-                  <p>${tweet.content.text}</p>
+                  <p>${escape(tweet.content.text)}</p>
                 </div>
 
                 <footer>
                     <div>
-                      <span>${tweet.created_at}</span>
+                      <span>${escape(tweet.created_at)}</span>
                       <span>
                         <i class="fas fa-flag dateIcons"></i>
                         <i class="fas fa-retweet"></i>
@@ -51,14 +57,23 @@ const loadTweets = function () {
 
 $(document).ready( function() {
   loadTweets();
-
+  
   const $form = $("#new-tweet-form");
+  
   $form.on('submit', function () {
     event.preventDefault()
-    let formData = $form.serialize()
-    $.ajax('/tweets', { method: 'POST' , data: formData})
+    let tweet = $('#tweet-box').val()
+    console.log(tweet)
+    if (tweet.length > 140) {
+      alert("Character Limit Exceeded!");
+    } else if (tweet.length === 0) {
+      alert("Empty Tweet Submission!")
+    } else 
+    $.ajax('/tweets', { method: 'POST' , data: $form.serialize()})
     .then(function (res) { 
       loadTweets();
+      $('#counter').text("140");
+      $("#tweet-box").val("");
     })
   })
 });

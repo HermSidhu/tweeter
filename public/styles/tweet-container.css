@@ -23,6 +23,15 @@ article.tweet:hover {
   font-weight: bold;
 }
 
+article:hover .fas {
+  visibility: visible;
+}
+
+article .fas {
+  visibility: hidden;
+}
+
+
 article.tweet .username {
   visibility: hidden;
   margin-left: auto

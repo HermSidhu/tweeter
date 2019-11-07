@@ -20,3 +20,9 @@ nav {
   font-size: 20px;
   float: right;
 }
+
+nav #arrowDown {
+  text-align: center;
+  float: right;
+  margin: -5px;
+}
