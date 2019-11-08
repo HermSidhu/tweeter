@@ -20,6 +20,7 @@ const escape = function (str) {
 }
 
 const createTweetElement = function (tweet) {
+  let $date = Math.floor((Date.now() - tweet.created_at) / 86400000);
   let $tweet = ` <article class="tweet">
                 <header>
                   
@@ -35,7 +36,7 @@ const createTweetElement = function (tweet) {
 
                 <footer>
                     <div>
-                      <span>${escape(tweet.created_at)}</span>
+                      <span>${escape($date)} days ago</span>
                       <span>
                         <i class="fas fa-flag dateIcons"></i>
                         <i class="fas fa-retweet"></i>
