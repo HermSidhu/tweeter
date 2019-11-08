@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-
 const renderTweets = function (tweets) {
   for (let tweet of tweets) { // loops through tweets
     let $tweet = createTweetElement(tweet) // calls createTweetElement for each tweet
@@ -13,12 +11,14 @@ const renderTweets = function (tweets) {
   }
 }
 
+// prevent js string hacks
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
+// tweet content 
 const createTweetElement = function (tweet) {
   let $date = Math.floor((Date.now() - tweet.created_at) / 86400000);
   let $tweet = ` <article class="tweet">
@@ -49,6 +49,7 @@ const createTweetElement = function (tweet) {
   return $tweet;
 }
 
+// load tweets
 const loadTweets = function () {
   $.ajax('/tweets', { method: 'GET' })
     .then(function (res) {
@@ -56,6 +57,7 @@ const loadTweets = function () {
     })
 }
 
+// compose box fade in and out after button click
 const composeTweetFade = function () {
   $(".new-tweet").fadeOut();
   let newTweetExists = false;
@@ -71,6 +73,7 @@ const composeTweetFade = function () {
   })
 };
 
+// submission for tweets
 $(document).ready(function () {
   loadTweets();
   composeTweetFade();

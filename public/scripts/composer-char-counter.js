@@ -1,3 +1,4 @@
+// character count function
 $(document).ready(function () {
 
   $('#tweet-box').on("keyup", function () {
