@@ -4,7 +4,10 @@ Tweeter is a simple, single-page Twitter clone.
 
 Built using HTML, CSS, JS, jQuery and AJAX front-end, alongside Node, Express and MongoDB back-end.
 
+Desktop View:
 !["Screenshot of desktop view"](https://raw.githubusercontent.com/HermSidhu/tweeter/master/docs/Desktop-View.png)
+
+Mobile View:
 !["Screenshot of mobile view"](https://raw.githubusercontent.com/HermSidhu/tweeter/master/docs/Mobile-View.png)
 
 ## Getting Started
