@@ -58,7 +58,7 @@ const loadTweets = function () {
 const composeTweetFade = function () {
   $(".new-tweet").fadeOut();
   let newTweetExists = false;
-    
+
   $("#downArrow").click(function () {
     if (newTweetExists) {
       $(".new-tweet").fadeOut();
@@ -79,17 +79,20 @@ $(document).ready(function () {
   $form.on('submit', function () {
     event.preventDefault()
     let tweet = $('#tweet-box').val()
-    console.log(tweet)
     if (tweet.length > 140) {
-      alert("Character Limit Exceeded!");
+      $("#validAlert").fadeIn().text("Tweet Exceeds Character Limit!");
+      window.setTimeout(function () { $("#validAlert").fadeOut("fast") }, 5000);
     } else if (tweet.length === 0) {
-      alert("Empty Tweet Submission!")
+      $("#validAlert").fadeIn().text("Empty Tweet Submission!");
+      window.setTimeout(function () { $("#validAlert").fadeOut("fast") }, 5000);
     } else
       $.ajax('/tweets', { method: 'POST', data: $form.serialize() })
         .then(function (res) {
           loadTweets();
           $('#counter').text("140");
           $("#tweet-box").val("");
+          $("#validAlert").css("background-color", "#49a1eb").fadeIn().text("Tweet Submitted!");
+          window.setTimeout(function () { $("#validAlert").fadeOut("fast") }, 5000);
         })
   })
 });

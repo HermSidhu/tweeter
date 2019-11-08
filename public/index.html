@@ -49,6 +49,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
         <section class="new-tweet">
+            <div id="validAlert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                This is an alert box.
+              </div>
             <h2 class="tweet-header">Compose Tweet</h2>
             <form id="new-tweet-form" method="POST" action="/tweets">
               <textarea name="text" id="tweet-box" class="tweet-box" placeholder=" What are you humming about?"></textarea>

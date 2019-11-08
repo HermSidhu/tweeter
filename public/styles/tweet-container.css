@@ -6,6 +6,14 @@
   width: 90%;
 }
 
+#validAlert {
+  display: none;
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
 article.tweet {
   border: 1px solid black;
 }
@@ -15,7 +23,8 @@ article.tweet .sampleTweetText{
 }
 
 article.tweet .sampleTweetText p {
-  margin: 0
+  margin: 0;
+  overflow-wrap: break-word
 }
 
 article.tweet:hover {
