@@ -80,10 +80,10 @@ $(document).ready(function () {
     event.preventDefault()
     let tweet = $('#tweet-box').val()
     if (tweet.length > 140) {
-      $("#validAlert").fadeIn().text("Tweet Exceeds Character Limit!");
+      $("#validAlert").css("background-color", "red").fadeIn().text("Tweet Exceeds Character Limit!");
       window.setTimeout(function () { $("#validAlert").fadeOut("fast") }, 5000);
     } else if (tweet.length === 0) {
-      $("#validAlert").fadeIn().text("Empty Tweet Submission!");
+      $("#validAlert").css("background-color", "red").fadeIn().text("Empty Tweet Submission!");
       window.setTimeout(function () { $("#validAlert").fadeOut("fast") }, 5000);
     } else
       $.ajax('/tweets', { method: 'POST', data: $form.serialize() })

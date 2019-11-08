@@ -15,3 +15,19 @@ header#mainHeader {
 .name {
   margin-top: 0;
 }
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  header#mainHeader {
+    width: 33.3%;
+    float: left;
+    align-items: inline;
+    margin: 20px;
+  }
+
+  .container {
+    float: right;
+    width: 60%;
+    margin-top: 40px;
+  }
+};
